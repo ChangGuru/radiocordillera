@@ -1,21 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Radio Cordillera FM</title>
+<title>Radio Cordillera 98.9 FM</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+background:#0a3d62;
+color:white;
+margin:0;
+}
+
+header{
+padding:40px;
+}
+
+.logo{
+width:200px;
+border-radius:50%;
+}
+
+h1{
+font-size:40px;
+margin:10px;
+}
+
+.sub{
+font-size:20px;
+opacity:0.9;
+}
+
+.slogan{
+font-style:italic;
+margin-top:10px;
+}
+
+.player{
+margin-top:40px;
+}
+
+.playbtn{
+background:red;
+color:white;
+font-size:20px;
+padding:15px 30px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.volume{
+width:200px;
+margin-top:15px;
+}
+
+.section{
+padding:60px 20px;
+background:white;
+color:black;
+}
+
+.director{
+width:200px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.contact{
+background:#111;
+padding:40px;
+}
+
+a{
+color:#00ffcc;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
 </head>
 
-<body style="text-align:center;font-family:Arial;">
+<body>
 
-<h1>📻 Radio Cordillera FM</h1>
-<p>San Bernardo - Señal en Vivo</p>
+<header>
 
-<audio controls>
-<source src="https://centova.streaming-chile.com/proxy/cordillerafm?mp=/stream" type="audio/mpeg">
-</audio>
+<img src="logo.png" class="logo">
 
-<p>Escucha nuestra señal en vivo las 24 horas.</p>
+<h1>Radio Cordillera</h1>
+
+<div class="sub">
+98.9 FM — San Bernardo
+</div>
+
+<div class="slogan">
+La Nº1 en la Provincia del Maipo
+</div>
+
+</header>
+
+<div class="player">
+
+<h2>Señal Online</h2>
+
+<audio id="radio" src="TU_LINK_DE_STREAM"></audio>
+
+<button class="playbtn" onclick="playRadio()">🔴 Escuchar en Vivo</button>
+
+<br>
+
+<input type="range" min="0" max="1" step="0.01" value="1"
+class="volume" onchange="volume(this.value)">
+
+</div>
+
+<div class="section">
+
+<h2>San Bernardo</h2>
+
+<p>
+San Bernardo es una comuna y ciudad chilena ubicada en el sector sur del Gran Santiago,
+capital de la Provincia del Maipo en la Región Metropolitana.
+Se encuentra aproximadamente a 18 km al sur de Santiago de Chile
+y forma parte del Gran Santiago.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>Director</h2>
+
+<img src="director.jpg" class="director">
+
+<h3>Don Alejandro Morales</h3>
+
+</div>
+
+<div class="contact">
+
+<h2>Contacto</h2>
+
+<p>📞 Llamadas a la radio</p>
+
+<p>
+<a href="tel:+56977140312">
++56 9 7714 0312
+</a>
+</p>
+
+<p>💬 WhatsApp</p>
+
+<p>
+<a href="https://wa.me/56977140312">
+Enviar mensaje
+</a>
+</p>
+
+</div>
+
+<script>
+
+function playRadio(){
+document.getElementById("radio").play();
+}
+
+function volume(v){
+document.getElementById("radio").volume = v;
+}
+
+</script>
 
 </body>
 </html>
-
